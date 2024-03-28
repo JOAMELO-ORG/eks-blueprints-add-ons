@@ -82,7 +82,7 @@ spec:
           helm:
             values: |
              role: {{metadata.annotations.karpenter_node_iam_role_name}}
-             cluster-name: {{metadata.annotations.aws_cluster_name}}
+             clustername: {{metadata.annotations.aws_cluster_name}}
       #   - repoURL: 'https://github.com/JOAMELO-ORG/eks-blueprints-add-ons'
       #     targetRevision: '{{metadata.annotations.addons_repo_revision}}'
       #     path: add-ons/karpenter-config

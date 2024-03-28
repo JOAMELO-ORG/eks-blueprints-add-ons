@@ -5,7 +5,7 @@ metadata:
   name: default
 spec:
   amiFamily: AL2
-  role: '{{ .Values.role }}'
+  role: {{ .Values.role }}
   securityGroupSelectorTerms:
   - tags:
       karpenter.sh/discovery: '{{ .Values.clusterName }}'

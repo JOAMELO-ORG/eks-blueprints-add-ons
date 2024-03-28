@@ -12,7 +12,9 @@ spec:
   limits:
     cpu: "100"
   template:
-    metadata: {}
+    metadata:
+        labels:
+         nodetype: workload
     spec:
       kubelet:
         maxPods: 110

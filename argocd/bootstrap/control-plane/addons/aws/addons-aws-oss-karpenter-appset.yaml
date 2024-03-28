@@ -78,7 +78,7 @@ spec:
         - repoURL: '{{metadata.annotations.addons_repo_url}}'
           chart: karpenter-config
           path: add-ons/karpenter-config
-          targetRevision: '{{metadata.annotations.addons_repo_revision}}'
+          # targetRevision: '{{metadata.annotations.addons_repo_revision}}'
           helm:
             values: |
              role: {{metadata.annotations.karpenter_node_iam_role_name}}

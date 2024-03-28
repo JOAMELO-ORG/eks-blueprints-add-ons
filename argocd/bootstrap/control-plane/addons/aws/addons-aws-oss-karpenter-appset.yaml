@@ -76,11 +76,29 @@ spec:
         #     role: {{metadata.annotations.karpenter_node_iam_role_name}}
         #     cluster-name: {{metadata.annotations.aws_cluster_name}}
         - repoURL: 'https://github.com/JOAMELO-ORG/eks-blueprints-add-ons'
-          targetRevision: '{{metadata.annotations.addons_repo_revision}}'
-          path: add-ons/karpenter-config
-          values:
-            clusterName: {{metadata.annotations.aws_cluster_name}}
-            role: {{metadata.annotations.karpenter_node_iam_role_name}}
+          path: /add-ons/karpenter-config
+          targetRevision: HEAD
+          helm:
+            values: |
+             role: {{metadata.annotations.karpenter_node_iam_role_name}}
+             cluster-name: {{metadata.annotations.aws_cluster_name}}
+      #   - repoURL: 'https://github.com/JOAMELO-ORG/eks-blueprints-add-ons'
+      #     targetRevision: '{{metadata.annotations.addons_repo_revision}}'
+      #     path: add-ons/karpenter-config
+      #     parameters:
+      #       - name: karpenter.serviceAccount.name
+      #         value: {{ .Values.karpenter.serviceAccountName }}
+      #       - name: karpenter.settings.clusterName
+      #         value: {{ .Values.clusterName }}
+      #       - name: karpenter.settings.clusterEndpoint
+      #         value: {{ .Values.karpenter.controllerClusterEndpoint }}
+      #       - name: karpenter.settings.defaultInstanceProfile
+      #         value: {{ .Values.karpenter.awsDefaultInstanceProfile }}
+      #       - name: karpenter.settings.interruptionQueueName
+      #         value: {{ .Values.karpenter.awsInterruptionQueueName }}
+      # values:
+      #   clusterName: {{metadata.annotations.aws_cluster_name}}
+      #   role: {{metadata.annotations.karpenter_node_iam_role_name}}
 
           # values: |
           #   role: {{metadata.annotations.karpenter_node_iam_role_name}}

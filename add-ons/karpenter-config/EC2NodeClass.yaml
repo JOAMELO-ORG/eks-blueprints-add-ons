@@ -5,12 +5,12 @@ metadata:
   name: default
 spec:
   amiFamily: AL2
-  role: karpenter-psp-controlplane-20240327163624269700000001
+  role: {{ .Values.role }}
   securityGroupSelectorTerms:
   - tags:
-      karpenter.sh/discovery: psp-controlplane
+      karpenter.sh/discovery: {{ .Values.clusterName }}
   subnetSelectorTerms:
   - tags:
-      karpenter.sh/discovery: psp-controlplane
+      karpenter.sh/discovery: {{ .Values.clusterName }}
   tags:
     managed-by: karpenter

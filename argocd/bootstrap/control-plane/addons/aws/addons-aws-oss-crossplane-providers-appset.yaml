@@ -36,12 +36,12 @@ spec:
             - $values/{{metadata.annotations.addons_repo_basepath}}clusters/{{name}}/addons/{{values.addonChart}}/resources/values.yaml
           values: |
             global:
-              enabled_aws: false
+              enabled_aws: {{metadata.labels.enable_aws_crossplane_provider}}
               iam_role_arn_aws: {{metadata.annotations.aws_crossplane_iam_role_arn}}
-              enabled_aws_upbound: true
+              enabled_aws_upbound: {{metadata.labels.enable_aws_crossplane_upbound_provider}}
               iam_role_arn_aws_upbound: {{metadata.annotations.aws_upbound_crossplane_iam_role_arn}}
-              enabled_kubernetes: false
-              enabled_helm: false
+              enabled_kubernetes: {{metadata.labels.enable_crossplane_kubernetes_provider}}
+              enabled_helm: {{metadata.labels.enable_crossplane_helm_provider}}
           # fileParameters:
           #  - name:
           #    path:

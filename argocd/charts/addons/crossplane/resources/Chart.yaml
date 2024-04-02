@@ -23,16 +23,16 @@ version: 1.0.0
 # It is recommended to use it with quotes.
 appVersion: "1.0.0"
 
-dependencies:
-  - name: aws
-    version: "1.0.0"
-    repository: "file://aws"
-  - name: kubernetes
-    version: "1.0.0"
-    repository: "file://kubernetes"
-  - name: helm
-    version: "1.0.0"
-    repository: "file://helm"
-  - name: aws-upbound
-    version: "1.0.0"
-    repository: "file://aws-upbound"
+# dependencies:
+#   - name: aws
+#     version: "1.0.0"
+#     repository: "file://aws"
+#   - name: kubernetes
+#     version: "1.0.0"
+#     repository: "file://kubernetes"
+#   - name: helm
+#     version: "1.0.0"
+#     repository: "file://helm"
+#   - name: aws-upbound
+#     version: "1.0.0"
+#     repository: "file://aws-upbound"

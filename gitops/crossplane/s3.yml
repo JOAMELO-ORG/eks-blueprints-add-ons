@@ -5,7 +5,7 @@ metadata:
     meta.upbound.io/example-id: s3/v1beta1/bucketlogging
   labels:
     testing.upbound.io/example-name: example
-  name: example-${Rand.RFC1123Subdomain}
+  name: example-leonardo-crossplane-1
 spec:
   forProvider:
     region: us-east-1
